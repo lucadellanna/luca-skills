@@ -1,0 +1,12 @@
+# Skill outputs (downloaded files, caches)
+earning-reports/
+
+# Local test artifacts (keep real tests tracked)
+test/simulated-install/
+test-artifacts/
+
+# Conductor workspace files
+.context/
+
+# Project-level Claude config (symlinks to skills/)
+.claude/
