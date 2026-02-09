@@ -6,3 +6,6 @@ test/
 
 # Conductor workspace files
 .context/
+
+# Project-level Claude config (symlinks to skills/)
+.claude/
