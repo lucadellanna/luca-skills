@@ -10,7 +10,9 @@
 ## Which document within a filing
 
 - Each filing contains multiple documents. Use the `primaryDocument` field from the EDGAR submissions API — this is the main report.
-- If `primaryDocument` is missing or ambiguous, prefer the first `.htm` file in the filing index.
+- If `primaryDocument` is missing or ambiguous, fetch the filing directory index (`https://www.sec.gov/Archives/edgar/data/{cik}/{accession_number_no_dashes}/index.json`) and select:
+  - The first file ending in `.htm` or `.html`, excluding obvious index pages like `*-index.html`.
+  - If no HTML files exist, fall back to the first non-empty file in the index and warn the user.
 
 ## Avoiding re-downloads
 

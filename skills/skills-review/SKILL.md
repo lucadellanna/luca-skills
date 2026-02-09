@@ -1,7 +1,7 @@
 ---
 name: skills-review
 description: Review a skill for quality and framework compliance. Use when "review this skill", "check skill quality", "validate skill".
-version: 2026-02-09
+last-updated: 2026-02-09T14:56:55Z
 ---
 
 Review one or more skills against the luca-skills framework (`framework/FRAMEWORK.md`).
@@ -20,14 +20,18 @@ For each skill folder, verify:
 
 - `SKILL.md` exists (required — everything else is optional)
 - YAML frontmatter is present and parseable
-- Required frontmatter fields: `name`, `description`, `version`
-- No files that don't belong (expected: `SKILL.md`, `template.md`, `criteria.md`, `pending-updates.md`, `.skillstate.json`)
+- Required frontmatter fields: `name`, `description`, `last-updated`
+- File layout is reasonable:
+  - Common optional files: `template.md`, `criteria.md`, `pending-updates.md`, `.skillstate.json`
+  - Common machine-managed folders: `.backups/`
+  - Extra files are allowed (some skills may include assets, examples, or helper scripts)
 
 ### 3. Check frontmatter
 
 - `name` matches the directory name
+- If `display-name` is present, it is plain language and suitable for showing in a list
 - `description` is plain language and explains what the skill does
-- `version` is a date in YYYY-MM-DD format
+- `last-updated` is an ISO-8601 UTC timestamp (e.g. `2026-02-09T14:56:55Z`)
 - If `inspirations` is present, each entry is a recognizable path (e.g. `owner/repo/path` or URL)
 - If `depends` is present, each listed skill exists in `skills/`
 
@@ -58,12 +62,12 @@ Present findings grouped by severity:
 **Errors** (must fix before the skill is usable):
 - Missing SKILL.md
 - Missing or unparseable frontmatter
-- Missing required frontmatter fields (`name`, `description`, `version`)
+- Missing required frontmatter fields (`name`, `description`, `last-updated`)
 - Broken dependencies (listed in `depends` but not found)
 
 **Warnings** (should fix):
 - `name` doesn't match directory name
-- `version` isn't a valid date
+- `last-updated` isn't a valid ISO-8601 UTC timestamp
 - Technical jargon in user-facing language
 - Procedure lacks numbered steps or uses passive tone
 

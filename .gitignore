@@ -1,8 +1,9 @@
 # Skill outputs (downloaded files, caches)
 earnings/
 
-# Test artifacts
-test/
+# Local test artifacts (keep real tests tracked)
+test/simulated-install/
+test-artifacts/
 
 # Conductor workspace files
 .context/

@@ -23,6 +23,6 @@ Claude will walk you through the rest. You'll see a list of available skills, pi
 
 ## Support
 
-This collection is actively maintained and refined. If you find it useful and want to support ongoing development, visit [Patreon](https://patreon.com/lucadellanna).
+This collection is actively maintained and refined. If you find it useful and want to support ongoing development, visit [Patreon](https://www.patreon.com/dellannaluca).
 
 Questions or feedback? Open an issue on this repo or reach out directly.

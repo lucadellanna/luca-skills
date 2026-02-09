@@ -1,7 +1,7 @@
 ---
 name: download-earnings
 description: Download the last 4 quarterly earnings reports for a company from SEC EDGAR. Use when "download earnings", "get earnings reports", "fetch quarterly filings".
-version: 2026-02-10
+last-updated: 2026-02-09T14:56:55Z
 ---
 
 Download the most recent quarterly earnings filings (10-Q) from SEC EDGAR and save them locally. See `criteria.md` for filing selection logic and `template.md` for output format.
@@ -12,6 +12,8 @@ Ask the user for a company name or ticker symbol.
 
 ### 2. Resolve ticker to CIK
 
+Ask the user for a User-Agent contact string to use on all SEC requests (they should provide their own). Example: `Your Name (your.email@example.com)`. Use it consistently for every request in this run.
+
 Fetch `https://www.sec.gov/files/company_tickers.json` to find the company's CIK number.
 
 - Search by ticker (exact match, case-insensitive) first.
@@ -19,15 +21,17 @@ Fetch `https://www.sec.gov/files/company_tickers.json` to find the company's CIK
 - If multiple matches, present the options and ask the user to confirm.
 - If no match, tell the user the company wasn't found on EDGAR and stop.
 
-Zero-pad the CIK to 10 digits for the next step (e.g. `320193` → `0000320193`).
-
-Include a User-Agent header on all SEC requests: `luca-skills/1.0 (skills@example.com)`.
+Keep both forms of the CIK:
+- `cik` = the numeric CIK with no leading zeros (e.g. `320193`) — use this for EDGAR Archives URLs.
+- `padded_cik` = the 10-digit, zero-padded CIK (e.g. `0000320193`) — use this for the submissions API URL below.
 
 ### 3. Fetch filing history
 
-Fetch `https://data.sec.gov/submissions/CIK{padded_cik}.json`.
+Fetch `https://data.sec.gov/submissions/CIK{padded_cik}.json` (with the same User-Agent).
 
 The response contains a `filings.recent` object with arrays: `form`, `filingDate`, `accessionNumber`, `primaryDocument`, `primaryDocDescription`.
+
+It may also include `reportDate` (the period of report). Capture it when present for the output summary.
 
 Filter and select filings per `criteria.md`.
 
@@ -36,12 +40,18 @@ Filter and select filings per `criteria.md`.
 Create the output directory: `./earnings/{TICKER}/`
 
 For each selected filing:
-- Build the document URL: `https://www.sec.gov/Archives/edgar/data/{cik}/{accession-number-no-dashes}/{primaryDocument}`
+- Compute `accession_number_no_dashes` by removing dashes from `accessionNumber`.
+- Build the document URL: `https://www.sec.gov/Archives/edgar/data/{cik}/{accession_number_no_dashes}/{primaryDocument}`
+- If `primaryDocument` is missing or empty, fetch the filing directory `index.json` and select the first HTML report per `criteria.md`.
+- Before downloading, check whether the destination file already exists and is non-empty. If so, skip it and note it in the summary.
 - Download the document using curl or equivalent with the User-Agent header.
-- Save as `./earnings/{TICKER}/{filingDate}_{form}.htm` (or appropriate extension).
+- Create `safe_form` for filenames by replacing `/` with `-` (e.g. `10-Q/A` → `10-Q-A`) and trimming spaces.
+- Save as `./earnings/{TICKER}/{filingDate}_{safe_form}_{accession_number_no_dashes}.html` (or appropriate extension).
 - Verify the file is non-empty and not an error page.
 
-Respect EDGAR's rate limit — wait briefly between requests if downloading multiple files.
+Respect EDGAR's rate limits — wait briefly between requests if downloading multiple files.
+
+If any SEC request returns a rate limit or transient error (e.g. 429/503), wait and retry a few times with increasing delays. If it still fails, stop and explain what happened.
 
 ### 5. Present summary
 

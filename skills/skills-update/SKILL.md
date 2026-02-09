@@ -1,12 +1,12 @@
 ---
 name: skills-update
 description: Check for improvements to your skills and apply them. Use when "update my skills", "check for updates", "skills update".
-version: 2026-02-09
+last-updated: 2026-02-09T14:56:55Z
 ---
 
 Update installed skills by learning from their inspiration sources. See `framework/FRAMEWORK.md` § "Update Flow" for the full specification.
 
-This procedure has three phases. **No changes are made until Phase 3**, and only after user confirmation.
+This procedure has three phases. **No user-customizable skill files are changed until Phase 3**, and only after user confirmation.
 
 If the user says **"undo the last update"**, skip to the Undo section at the bottom.
 
@@ -14,7 +14,9 @@ If the user says **"undo the last update"**, skip to the Undo section at the bot
 
 ## Phase 1 — Discover and gather
 
-No files are modified in this phase.
+No user-customizable skill files are modified in this phase (e.g. `SKILL.md`, `criteria.md`, `template.md`).
+
+This phase may create or update `pending-updates.md` files to save proposed improvements for later review.
 
 ### 1. Locate installed skills
 
@@ -137,7 +139,7 @@ For each successfully updated skill:
   - `last_updated` → current timestamp
   - `last_checked` → current timestamp
   - `backup_path` → path from step 9
-  - `installed_version` → new version date
+  - `skill_timestamp` → new `last-updated` date
 
 ### 14. Mark items
 
