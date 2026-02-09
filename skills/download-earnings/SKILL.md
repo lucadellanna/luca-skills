@@ -37,7 +37,7 @@ Filter and select filings per `criteria.md`.
 
 ### 4. Download filings
 
-Create the output directory: `./earnings/{TICKER}/`
+Create the output directory: `./earning-reports/{TICKER}/`
 
 For each selected filing:
 - Compute `accession_number_no_dashes` by removing dashes from `accessionNumber`.
@@ -46,7 +46,7 @@ For each selected filing:
 - Before downloading, check whether the destination file already exists and is non-empty. If so, skip it and note it in the summary.
 - Download the document using curl or equivalent with the User-Agent header.
 - Create `safe_form` for filenames by replacing `/` with `-` (e.g. `10-Q/A` → `10-Q-A`) and trimming spaces.
-- Save as `./earnings/{TICKER}/{filingDate}_{safe_form}_{accession_number_no_dashes}.html` (or appropriate extension).
+- Save as `./earning-reports/{TICKER}/{filingDate}_{safe_form}_{accession_number_no_dashes}.html` (or appropriate extension).
 - Verify the file is non-empty and not an error page.
 
 Respect EDGAR's rate limits — wait briefly between requests if downloading multiple files.

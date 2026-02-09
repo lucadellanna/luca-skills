@@ -1,5 +1,5 @@
 # Skill outputs (downloaded files, caches)
-earnings/
+earning-reports/
 
 # Local test artifacts (keep real tests tracked)
 test/simulated-install/
