@@ -27,6 +27,8 @@ luca-skills/
 │   │   └── SKILL.md
 │   ├── skills-update/     ← The updater (is itself a skill)
 │   │   └── SKILL.md
+│   ├── skills-integrity-check/ ← Meta-skill: audit installed skills
+│   │   └── SKILL.md
 │   ├── download-earnings/ ← Domain skill: download SEC filings
 │   │   ├── SKILL.md
 │   │   ├── template.md
@@ -58,8 +60,9 @@ Contains the procedural description of the skill. Includes YAML front matter for
 ```yaml
 ---
 name: earnings-analysis
+display-name: Earnings analysis
 description: Analyze quarterly earnings reports
-version: 2025-02-09
+last-updated: 2026-02-09T14:56:55Z
 inspirations:
   - lucadellanna/luca-skills/skills/earnings-analysis
   - johndoe/earnings-analysis
@@ -73,9 +76,10 @@ update-behavior: ask before changing procedure, auto-apply presentation changes
 
 | Field | Purpose |
 |-------|---------|
-| `name` | Human-readable skill name |
+| `name` | Skill id (kebab-case). Must match the skill folder name. Used for invocation and installation. |
+| `display-name` | Optional. Human-readable label used in UI/lists. If omitted, use `name`. |
 | `description` | What the skill does (used during installation to help users choose) |
-| `version` | Date of last update (YYYY-MM-DD) |
+| `last-updated` | Timestamp of last update (ISO-8601 UTC, e.g. `2026-02-09T14:56:55Z`) |
 | `inspirations` | List of skills this one learns from. Can be from luca-skills, third parties, or any public source. All treated equally — no privileged "upstream" |
 | `depends` | List of other skills this one requires to function |
 | `update-behavior` | Optional. Preferred update behavior — e.g. "auto-apply presentation changes, ask for procedural changes" |
@@ -100,11 +104,12 @@ Machine-managed state file. Tracks:
 
 ```json
 {
-  "installed_version": "2025-02-09",
+  "enabled": true,
+  "skill_timestamp": "2026-02-09T14:56:55Z",
   "installed_from": "https://github.com/lucadellanna/luca-skills",
-  "last_checked": "2025-02-09T10:00:00Z",
-  "last_updated": "2025-02-01T10:00:00Z",
-  "backup_path": ".backups/2025-02-01T10.00.00Z/"
+  "last_checked": "2026-02-09T10:00:00Z",
+  "last_updated": "2026-02-01T10:00:00Z",
+  "backup_path": ".backups/2026-02-01T10.00.00Z/"
 }
 ```
 
@@ -129,7 +134,7 @@ The repo contains two entry points:
 3. Claude presents available skills to the user in plain language: "Here are the skills available. Which would you like?"
 4. User selects (conversationally — "all of them", "just the financial ones", etc.).
 5. Claude copies selected skill folders to `~/.claude/skills/`.
-6. Claude creates `.skillstate.json` in each installed skill, recording source and version.
+6. Claude creates `.skillstate.json` in each installed skill, recording source and timestamp.
 7. Claude confirms with example usage: "You can now use these by asking me to [example]."
 
 **No git knowledge required.** Claude handles fetching and copying. The user never sees a terminal, a repo, or a file path (unless they want to).
@@ -150,7 +155,7 @@ Once installed, skills are invoked naturally — no special syntax required for 
 
 **Discovery:** Claude knows which skills are available because it scans `~/.claude/skills/` (or the project's `skills/` directory). Disabled skills (per `.skillstate.json`) are skipped.
 
-If a skill has missing dependencies or a broken SKILL.md, Claude should inform the user and suggest running the audit (`/audit-skills`) rather than failing silently.
+If a skill has missing dependencies or a broken SKILL.md, Claude should inform the user and suggest running the integrity check (`/skills-integrity-check`) rather than failing silently.
 
 ---
 
@@ -160,7 +165,9 @@ Single entry point. One command for all update activity.
 
 **Trigger:** User says "update my skills" or runs `/skills-update`.
 
-### Phase 1 — Discover and gather (no changes made)
+### Phase 1 — Discover and gather
+
+No user-customizable skill files are modified in this phase (e.g. `SKILL.md`, `criteria.md`, `template.md`). This phase may create or update `pending-updates.md` files to save proposed improvements for later review.
 
 1. **Check for new skills:** Fetch latest from the luca-skills repo. Identify any new skills not yet installed. Offer them to the user.
 2. **Check each installed skill's inspirations:** For every installed skill (regardless of origin — luca-skills, user-created, or third-party):
@@ -232,10 +239,12 @@ One action, full reversal.
 
 ### Skill-owned files
 
-All files within a skill folder (SKILL.md, template.md, criteria.md, etc.) are protected by:
+User-customizable files within a skill folder (SKILL.md, template.md, criteria.md, and any other user-authored files) are protected by:
 - Automatic timestamped backups before every modification.
 - Single-action undo.
 - Preview before any change is applied.
+
+Machine-managed files (`pending-updates.md`, `.skillstate.json`, `.backups/`) may be created or updated without backup, since they can be regenerated and are not intended for manual editing.
 
 ### User-owned external files
 
@@ -254,9 +263,9 @@ All skill-owned artifacts (outputs, caches, logs, backups, and state) live withi
 
 ---
 
-## Audit and Dependencies
+## Integrity Check and Dependencies
 
-An `audit-skills` meta-skill checks:
+The `skills-integrity-check` meta-skill checks:
 
 - **Broken dependencies:** Skills that declare `depends` on skills that are missing or broken.
 - **Structural issues:** Missing SKILL.md, malformed frontmatter, or other problems.
