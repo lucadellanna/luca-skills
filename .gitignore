@@ -1,0 +1,8 @@
+# Skill outputs (downloaded files, caches)
+earnings/
+
+# Test artifacts
+test/
+
+# Conductor workspace files
+.context/

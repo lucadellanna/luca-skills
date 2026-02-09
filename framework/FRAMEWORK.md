@@ -16,21 +16,18 @@ How the requirements are implemented. See `REQUIREMENTS.md` for goals and constr
 
 ```
 luca-skills/
-├── README.md           ← Human-readable: explains what this is, how to get started
-├── INSTALLATION.md     ← Claude-readable: instructions Claude follows to install skills
-├── CLAUDE.md           ← Skill routing table (for development and testing)
-├── REQUIREMENTS.md     ← Goals and constraints
-├── FRAMEWORK.md        ← This file
+├── README.md              ← Human-readable: explains what this is, how to get started
+├── INSTALLATION.md        ← Claude-readable: instructions Claude follows to install skills
+├── CLAUDE.md              ← Skill routing table (for development and testing)
+├── framework/
+│   ├── REQUIREMENTS.md    ← Goals and constraints
+│   └── FRAMEWORK.md       ← This file
 ├── skills/
-│   ├── skills-update/  ← The updater (is itself a skill)
+│   ├── skills-review/     ← Meta-skill: review skills for quality
 │   │   └── SKILL.md
-│   ├── audit-skills/   ← Checks dependencies, broken skills
+│   ├── skills-update/     ← The updater (is itself a skill)
 │   │   └── SKILL.md
-│   ├── create-skill/   ← Meta-skill: create new skills
-│   │   └── SKILL.md
-│   ├── improve-skill/  ← Meta-skill: enhance existing skills
-│   │   └── SKILL.md
-│   ├── earnings-analysis/  ← Example domain skill
+│   ├── download-earnings/ ← Domain skill: download SEC filings
 │   │   ├── SKILL.md
 │   │   ├── template.md
 │   │   └── criteria.md
