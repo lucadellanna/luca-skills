@@ -10,7 +10,9 @@ Skip any skill where the SKILL.md cannot be read or has no valid frontmatter.
 
 ## Step 2: Present skills to the user
 
-Show the user a plain-language list of available skills:
+If the `AskUserQuestion` tool is available, use it to let the user pick which skills to install. Set `multiSelect: true` so they can choose more than one. Each option should be the skill name, and the question text should briefly describe what each skill does.
+
+If the tool is not available, show a plain-language list instead and ask conversationally:
 
 > Here are the skills available from luca-skills:
 >
