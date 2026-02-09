@@ -8,10 +8,10 @@ After downloading, present this summary to the user:
 
 | Period | Filed | Form | File |
 |--------|-------|------|------|
-| {report_date} | {filing_date} | {form_type} | `earnings/{TICKER}/{filename}` |
+| {report_date} | {filing_date} | {form_type} | `earning-reports/{TICKER}/{filename}` |
 | ... | ... | ... | ... |
 
-Saved to: `./earnings/{TICKER}/`
+Saved to: `./earning-reports/{TICKER}/`
 {N} filing(s) downloaded.
 
 ---
