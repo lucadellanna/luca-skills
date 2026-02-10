@@ -16,6 +16,8 @@ Curated AI skills that non-technical users install, customize, and improve over 
 | `/skills-update` | Check for skill improvements and apply them | "update my skills", "check for updates", "skills update" |
 | `/skills-integrity-check` | Check installed skills for broken dependencies and inconsistent state | "check my skills", "integrity check", "find broken skills" |
 | `/skills-improve` | Analyze a skill for improvements, implement them, optimize, and review | "improve this skill", "make skill better", "optimize skill" |
+| `/reflect` | Structured reflection after complex work — extract insights and propose actions | "reflect on this", "what did we learn", "session recap" |
+| `/create-skill` | Create a new skill with proper structure | "create a skill", "new skill for", "add a skill" |
 
 ## Development
 
@@ -28,3 +30,4 @@ Curated AI skills that non-technical users install, customize, and improve over 
 ## Key Rules
 
 - Keep this file and `framework/*.md` concise. Prefer bullets over prose. Edit to tighten, never to expand.
+- Naming: reserve the `skills-*` prefix for operations on *existing* skills (e.g., `skills-review`, `skills-update`, `skills-improve`, `skills-integrity-check`, `skills-consolidate`). Use plain names for everything else (e.g., `reflect`, `create-skill`, `plan`, `add-hook`).

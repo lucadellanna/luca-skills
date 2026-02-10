@@ -69,6 +69,7 @@ inspirations:
 depends:
   - financial-data-loader
 update-behavior: ask before changing procedure, auto-apply presentation changes
+origin: self-authored
 ---
 ```
 
@@ -83,6 +84,7 @@ update-behavior: ask before changing procedure, auto-apply presentation changes
 | `inspirations` | List of skills this one learns from. Can be from luca-skills, third parties, or any public source. All treated equally — no privileged "upstream" |
 | `depends` | List of other skills this one requires to function |
 | `update-behavior` | Optional. Preferred update behavior — e.g. "auto-apply presentation changes, ask for procedural changes" |
+| `origin` | Optional. Provenance — e.g. `self-authored`, `installed`, `forked`. Helps identify where a skill came from when no `.skillstate.json` exists |
 
 **The body** of SKILL.md is the procedure — natural language instructions that Claude follows when executing the skill.
 
