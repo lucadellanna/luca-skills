@@ -30,4 +30,4 @@ Curated AI skills that non-technical users install, customize, and improve over 
 ## Key Rules
 
 - Keep this file and `framework/*.md` concise. Prefer bullets over prose. Edit to tighten, never to expand.
-- Naming: reserve the `skills-*` prefix for skill-maintenance operations (e.g., `skills-review`, `skills-update`, `skills-improve`, `skills-integrity-check`). Use plain names for general-purpose workflows (e.g., `reflect`, `create-skill`).
+- Naming: reserve the `skills-*` prefix for operations on *existing* skills (e.g., `skills-review`, `skills-update`, `skills-improve`, `skills-integrity-check`, `skills-consolidate`). Use plain names for everything else (e.g., `reflect`, `create-skill`, `plan`, `add-hook`).

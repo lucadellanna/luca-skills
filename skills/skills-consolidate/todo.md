@@ -21,4 +21,4 @@ Scans a set of skills (global, project, or both) and identifies overlapping proc
 
 ## Post-build
 
-- Remove global `~/.claude/skills/consolidate-skills/` and replace with symlink to this project's `skills/skills-consolidate/`
+- Delete global `~/.claude/skills/consolidate-skills/` (replaced by this project version, distributed via install flow)
