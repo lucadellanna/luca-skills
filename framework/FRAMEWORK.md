@@ -100,7 +100,9 @@ Human-readable list of proposed improvements, written by the updater. Users can 
 
 ### .skillstate.json
 
-Machine-managed state file. Tracks:
+Machine-managed state file. Tracks installation metadata and skill-specific persistent state.
+
+**Standard fields:**
 
 ```json
 {
@@ -113,7 +115,33 @@ Machine-managed state file. Tracks:
 }
 ```
 
-Not intended for manual editing.
+**Custom fields (skill-specific):**
+
+Skills may store user-provided configuration that should persist across invocations. This avoids re-asking the user on every run.
+
+Example (from `download-earnings`):
+
+```json
+{
+  "enabled": true,
+  "skill_timestamp": "2026-02-09T14:56:55Z",
+  "installed_from": "https://github.com/lucadellanna/luca-skills",
+  "last_checked": "2026-02-09T10:00:00Z",
+  "last_updated": "2026-02-01T10:00:00Z",
+  "backup_path": null,
+  "sec_contact": "Jane Smith (jane@example.com)"
+}
+```
+
+The `sec_contact` field is skill-specific — it stores the user's name and email for SEC API requests so they don't have to provide it every time the skill runs.
+
+**Conventions:**
+- Standard fields (enabled, skill_timestamp, etc.) are managed by the framework
+- Custom fields are skill-specific and documented in the skill's SKILL.md
+- Use custom fields for: user preferences, contact info, cached identifiers, and references to secrets stored elsewhere (e.g. a system keychain identifier)
+- Do not store: secrets (API keys, tokens, passwords), large data (use separate files), temporary state (use runtime variables)
+
+Not intended for manual editing, but Power Analysts may edit custom fields directly if documented by the skill.
 
 ---
 
