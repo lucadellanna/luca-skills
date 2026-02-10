@@ -10,3 +10,7 @@ test-artifacts/
 
 # Project-level Claude config (symlinks to skills/)
 .claude/
+
+# Skill-managed artifacts (created during updates/improvements)
+**/.backups/
+**/.skillstate.json
