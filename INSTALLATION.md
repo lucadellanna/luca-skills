@@ -20,6 +20,7 @@ If the tool is not available, show a plain-language list instead and ask convers
 > - **skills-review** — Review a skill for quality and framework compliance.
 > - **skills-update** — Check for improvements to your skills and apply them.
 > - **skills-integrity-check** — Check installed skills for broken dependencies and inconsistent state.
+> - **skills-improve** — Analyze a skill for improvements, implement selected ones, optimize, and review.
 >
 > Which would you like to install? You can say "all of them", pick specific ones, or ask me to tell you more about any of them.
 
@@ -50,9 +51,10 @@ If `~/.claude/skills/` does not exist, create it first.
 
 Tell the user what was installed and give example usage:
 
-> Installed 4 skills. You can now use them by asking me to:
+> Installed the selected skills. You can now use them by asking me to:
 > - "Download Apple's earnings reports" (download-earnings)
 > - "Update my skills" (skills-update)
+> - "Improve this skill" (skills-improve)
 >
 > Your skills are stored locally and you can customize them anytime — just tell me what you'd like to change.
 

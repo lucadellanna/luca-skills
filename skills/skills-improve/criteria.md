@@ -1,5 +1,22 @@
 # Improvement and optimization criteria
 
+## Minimal framework and requirements (use by default)
+
+Use this checklist when improving any skill, especially if `framework/REQUIREMENTS.md` and `framework/FRAMEWORK.md` are not available in the current context.
+
+- **Plain language:** Keep user-facing language non-technical. Avoid exposing diffs, git, patches, or internal implementation details unless the user asks.
+- **Context portability:** Support both:
+  - Project context (a `./skills/` folder in the current workspace)
+  - Installed context (skills under `~/.claude/skills/`)
+  Avoid hard-coded repo-relative paths (e.g. `skills/<name>/...`) unless guarded by an existence check.
+- **Safety model:** Preview → confirm → backup → apply → verify → rollback on failure.
+- **Backups:** Use filesystem-safe timestamps for backup folders (replace `:` with `.`).
+- **Write boundaries:** By default, write only within the skill folder you are improving (for skill-owned artifacts) or the active workspace (for outputs). Ask before writing elsewhere.
+- **Minimum structure:** `SKILL.md` exists; YAML frontmatter is parseable; required fields are present; `last-updated` is ISO-8601 UTC.
+- **Separation of concerns:** If the skill is complex enough, keep procedure in `SKILL.md`, evaluation/judgment in `criteria.md`, and output formatting in `template.md`. If the skill is simple, don't over-engineer.
+
+If `framework/REQUIREMENTS.md` and `framework/FRAMEWORK.md` are available, treat them as the source of truth and prefer them over this minimal checklist.
+
 ## Improvement dimensions
 
 Assess each dimension below. Skip dimensions where the skill is already strong. Generate suggestions only for genuine gaps — specific and actionable, not generic.
