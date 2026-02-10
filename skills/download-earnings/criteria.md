@@ -25,3 +25,12 @@
 - Each downloaded file should be non-empty.
 - If a downloaded file is very small (< 1 KB) or contains an error message instead of a filing, flag it and tell the user.
 - If the most recent filing is older than 6 months, note that the company may not be filing regularly.
+
+## SEC API health check
+
+This skill depends on SEC EDGAR's public API. If any of the following happen, stop and tell the user clearly — do not silently proceed with bad data:
+- The company tickers endpoint returns unexpected JSON structure (missing expected fields like `cik_str`, `ticker`, `title`).
+- The submissions endpoint returns unexpected JSON structure (missing `filings.recent` or its expected arrays).
+- Multiple consecutive downloads return empty files or error pages.
+
+Suggest the user check whether SEC EDGAR is experiencing issues or whether the API format has changed. Link them to https://www.sec.gov/edgar/searchedgar/companysearch for manual access as a fallback.

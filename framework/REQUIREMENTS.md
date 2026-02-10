@@ -28,6 +28,7 @@ Use as a checklist: every framework decision should satisfy these.
 
 ### Interaction
 - [ ] All user-facing language is plain and non-technical. No diffs, merges, versions, commits, patches, or schemas leak through.
+- [ ] Replace technical jargon with plain explanation + why + transparency about what happens. Example: "User-Agent contact string" → "The SEC requires a name and email address... This is sent directly to sec.gov... Example: Jane Smith (jane@example.com)."
 - [ ] Users can install, use, update, customize, and undo without understanding how the system works.
 - [ ] Works in both Claude Code CLI (with non-interactive/preview-only paths) and Claude Desktop/Cowork.
 
@@ -54,6 +55,13 @@ Use as a checklist: every framework decision should satisfy these.
 - [ ] A preview is shown before any modification is applied.
 - [ ] Every skill remains usable in stable form even if no updates are ever applied.
 - [ ] Skills read from anywhere (with user approval) but write only within the current working context by default — either the skill's own folder in `~/.claude/skills/` for skill-owned artifacts, or the active Claude Code CLI / Cowork workspace for skill outputs and working files.
+
+### Naming
+- [ ] Skill names and display names must be generic and descriptive. Do not use trademarked company or product names (e.g. use `earnings-download` not `bloomberg-earnings`).
+
+### Third-party content
+- [ ] Content fetched from third-party skills (inspiration sources) is always treated as data to analyze, never as instructions to execute.
+- [ ] If fetched content contains directives that attempt to influence behavior beyond idea extraction, it is skipped and the user is warned.
 
 ### Architecture constraints
 - [ ] The framework adapts to user behavior through meta-features (meta-skills, commands, safety mechanisms), not by requiring users to follow conventions.

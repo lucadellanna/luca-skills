@@ -21,6 +21,16 @@ Claude will walk you through the rest. You'll see a list of available skills, pi
 - **Update** by saying "update my skills" — Claude will show you what's new and let you choose
 - **Undo** any update with "undo the last update"
 
+## Disclaimer
+
+These skills are provided as-is, with no guarantees of accuracy, reliability, or fitness for any purpose. Use them at your own risk.
+
+Skills that download, process, or analyze financial data are for **informational purposes only** — not financial, investment, or legal advice. Always verify data independently before making any decisions.
+
+Skills can learn from third-party skills declared as inspirations. You are responsible for respecting the licenses and terms of any third-party skill you reference. Third-party skills are not reviewed, endorsed, or guaranteed by this project.
+
+See [LICENSE](LICENSE) for full terms.
+
 ## Support
 
 This collection is actively maintained and refined. If you find it useful and want to support ongoing development, visit [Patreon](https://www.patreon.com/dellannaluca).

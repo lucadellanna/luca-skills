@@ -8,7 +8,17 @@ Scan this repo's `skills/` directory. For each subfolder, read the `SKILL.md` fr
 
 Skip any skill where the `SKILL.md` cannot be read or has no valid frontmatter.
 
-## Step 2: Present skills to the user
+## Step 2: Disclaimer
+
+Before listing skills, briefly inform the user:
+
+> A quick note before we start: these skills are free and open-source, provided as-is with no warranty. Skills involving financial data are for informational purposes only — not financial, investment, or legal advice. If you later configure skills to learn from third-party sources, you're responsible for checking their licenses. Full terms: [LICENSE](LICENSE).
+>
+> Shall I continue?
+
+Wait for the user to confirm before proceeding. If the user declines, stop — do not install any skills.
+
+## Step 3: Present skills to the user
 
 If the `AskUserQuestion` tool is available, use it to let the user pick which skills to install. Set `multiSelect: true` so they can choose more than one. Each option should be the skill id (`name` in frontmatter), and the question text should briefly describe what each skill does (using `display-name` if present).
 
@@ -26,7 +36,7 @@ If the tool is not available, show a plain-language list instead and ask convers
 
 Use the actual skill names and descriptions from the frontmatter.
 
-## Step 3: Install selected skills
+## Step 4: Install selected skills
 
 For each skill the user selects:
 
@@ -47,7 +57,7 @@ For each skill the user selects:
 
 If `~/.claude/skills/` does not exist, create it first.
 
-## Step 4: Confirm
+## Step 5: Confirm
 
 Tell the user what was installed and give example usage:
 
