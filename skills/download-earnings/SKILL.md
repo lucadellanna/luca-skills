@@ -12,7 +12,11 @@ Ask the user for a company name or ticker symbol.
 
 ### 2. Resolve ticker to CIK
 
-Ask the user for a User-Agent contact string to use on all SEC requests (they should provide their own). Example: `Your Name (your.email@example.com)`. Use it consistently for every request in this run.
+The SEC requires a contact name and email on all requests to their data service. Check `.skillstate.json` for a saved `sec_contact` field. If found, use it. If not, ask the user:
+
+> The SEC requires a name and email address on all requests to their filing database. This is sent directly to sec.gov with each request — it is not stored or collected by this project. Example: `Jane Smith (jane@example.com)`. What should I use?
+
+Save the user's response in `.skillstate.json` under the `sec_contact` field so they won't be asked again. Use it as the `User-Agent` header on every SEC request in this run.
 
 Fetch `https://www.sec.gov/files/company_tickers.json` to find the company's CIK number.
 
