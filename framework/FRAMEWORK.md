@@ -138,8 +138,8 @@ The `sec_contact` field is skill-specific — it stores the user's name and emai
 **Conventions:**
 - Standard fields (enabled, skill_timestamp, etc.) are managed by the framework
 - Custom fields are skill-specific and documented in the skill's SKILL.md
-- Use custom fields for: API keys, user preferences, contact info, cached identifiers
-- Do not store: sensitive credentials (use system keychain), large data (use separate files), temporary state (use runtime variables)
+- Use custom fields for: user preferences, contact info, cached identifiers, and references to secrets stored elsewhere (e.g. a system keychain identifier)
+- Do not store: secrets (API keys, tokens, passwords), large data (use separate files), temporary state (use runtime variables)
 
 Not intended for manual editing, but Power Analysts may edit custom fields directly if documented by the skill.
 
