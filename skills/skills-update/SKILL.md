@@ -43,7 +43,7 @@ For each installed skill:
 
 1. Read `inspirations` from the SKILL.md frontmatter. If none listed, skip this skill.
 2. For each inspiration source:
-   - Fetch the latest version of the inspiration skill (from GitHub, a local path, or wherever the source points).
+   - Fetch the latest version of the inspiration skill (from GitHub, a local path, or wherever the source points). Read all files in the inspiration skill folder — SKILL.md, criteria.md, template.md, and any others present — not just the procedure file.
    - Compare against the version the user last saw (tracked in `.skillstate.json` → `last_checked`).
    - If the source has changed significantly since last check, summarize the net effect rather than listing each intermediate change.
 3. Extract improvement ideas **semantically** — based on what the change means and why it matters, not on structural similarity. The user's skill may have a completely different structure from the inspiration.
