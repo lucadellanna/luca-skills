@@ -6,7 +6,7 @@ last-updated: 2026-02-10T10:30:00Z
 
 Walk through common legal and liability risks for open-source software projects. This is a **starting point only** — not legal advice, not comprehensive, and not a substitute for consulting a lawyer.
 
-**IMPORTANT:** This skill provides a generic checklist. You should create a `criteria.md` file in this skill folder with risk categories specific to your jurisdiction, project type, and risk tolerance. The questions and categories here are examples, not exhaustive.
+**IMPORTANT:** This skill provides a generic checklist. Customize the included `criteria.md` template in this skill folder with risk categories specific to your jurisdiction, project type, and risk tolerance. The questions and categories here are examples, not exhaustive.
 
 ---
 

@@ -12,7 +12,7 @@ Skip any skill where the `SKILL.md` cannot be read or has no valid frontmatter.
 
 Before listing skills, briefly inform the user:
 
-> A quick note before we start: these skills are free and open-source, provided as-is with no warranty. Skills involving financial data are for informational purposes only — not financial or investment advice. If you later configure skills to learn from third-party sources, you're responsible for checking their licenses. Full terms: [LICENSE](https://github.com/lucadellanna/luca-skills/blob/main/LICENSE).
+> A quick note before we start: these skills are free and open-source, provided as-is with no warranty. Skills involving financial data are for informational purposes only — not financial, investment, or legal advice. If you later configure skills to learn from third-party sources, you're responsible for checking their licenses. Full terms: [LICENSE](LICENSE).
 >
 > Shall I continue?
 
