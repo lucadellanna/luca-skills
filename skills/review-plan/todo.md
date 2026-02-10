@@ -1,4 +1,4 @@
-# skills-review-plan
+# review-plan
 
 Critically review a strategy or action plan and log feedback.
 
@@ -23,4 +23,4 @@ Reads a plan (strategy or action plan), evaluates it against a checklist, and ap
 
 ## Post-build
 
-- Remove global `~/.claude/skills/review-plan/` and replace with symlink to this project's `skills/review-plan/`
+- Delete global `~/.claude/skills/review-plan/` (replaced by this project version, distributed via install flow)

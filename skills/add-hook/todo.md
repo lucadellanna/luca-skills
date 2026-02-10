@@ -1,4 +1,4 @@
-# skills-hook
+# add-hook
 
 Help users configure Claude Code hooks through conversation.
 
@@ -22,4 +22,4 @@ Guides the user through setting up automation hooks: what event triggers it, wha
 
 ## Post-build
 
-- Remove global `~/.claude/skills/add-hook/` and replace with symlink to this project's `skills/hook/`
+- Delete global `~/.claude/skills/add-hook/` (replaced by this project version, distributed via install flow)

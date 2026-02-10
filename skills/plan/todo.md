@@ -1,4 +1,4 @@
-# skills-plan
+# plan
 
 Initialize a structured planning cycle for a project or initiative.
 
@@ -17,9 +17,9 @@ Creates a planning directory with separate files for strategy (what/why), action
 
 ## Open questions
 
-- Should this skill pair tightly with skills-review-plan, or stay independent?
+- Should this skill pair tightly with review-plan, or stay independent?
 - Should it support different planning templates (quarterly, project, sprint)?
 
 ## Post-build
 
-- Remove global `~/.claude/skills/plan/` and replace with symlink to this project's `skills/plan/`
+- Delete global `~/.claude/skills/plan/` (replaced by this project version, distributed via install flow)
