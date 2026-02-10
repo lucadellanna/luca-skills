@@ -79,7 +79,7 @@ If verification fails:
 - Restore all files from the backup created in step 5.
 - Delete any newly created files that were not present in the pre-change file list (excluding `.backups/` itself).
 - Inform the user: "The improvements didn't apply cleanly. I've restored the skill to its previous state."
-- Skip to Phase 4 (Review) to report what went wrong.
+- Skip to step 13 (Summary) to report what went wrong. Do not run /skills-review in this case.
 
 ---
 
