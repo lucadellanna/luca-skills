@@ -28,6 +28,7 @@ Use as a checklist: every framework decision should satisfy these.
 
 ### Interaction
 - [ ] All user-facing language is plain and non-technical. No diffs, merges, versions, commits, patches, or schemas leak through.
+- [ ] Replace technical jargon with plain explanation + why + transparency about what happens. Example: "User-Agent contact string" → "The SEC requires a name and email address... This is sent directly to sec.gov... Example: Jane Smith (jane@example.com)."
 - [ ] Users can install, use, update, customize, and undo without understanding how the system works.
 - [ ] Works in both Claude Code CLI (with non-interactive/preview-only paths) and Claude Desktop/Cowork.
 
