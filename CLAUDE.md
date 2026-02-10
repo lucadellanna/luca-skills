@@ -15,6 +15,7 @@ Curated AI skills that non-technical users install, customize, and improve over 
 | `/download-earnings` | Download last 4 quarterly earnings filings from SEC EDGAR | "download earnings", "get earnings reports", "fetch 10-Q" |
 | `/skills-update` | Check for skill improvements and apply them | "update my skills", "check for updates", "skills update" |
 | `/skills-integrity-check` | Check installed skills for broken dependencies and inconsistent state | "check my skills", "integrity check", "find broken skills" |
+| `/skills-improve` | Analyze a skill for improvements, implement them, optimize, and review | "improve this skill", "make skill better", "optimize skill" |
 
 ## Development
 
