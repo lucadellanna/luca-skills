@@ -1,4 +1,6 @@
 # Getting Claude to Improve Over Time (Simple Setup)
+Frustrated at having to copy/paste prompts all the time, or seeing Claude making the same mistakes?
+Here's a quick guide to have a self-improving setup for Claude. Great for non-technical users.
 
 ## 1) Install & basic privacy
 - Install **Claude Desktop**: https://claude.com/download
@@ -6,7 +8,7 @@
 
 ## 2) Start a chat
 - Open Claude Desktop
-- **If you have a paid plan:** Click **"Cowork"** at the top, then start a new chat. You'll see a prompt to select a folder — I suggest creating a "Claude" folder in your top-level folder (for example, `Users/Luca/Claude`).
+- **If you have a paid plan:** Click **"Cowork"** at the top, then start a new chat. You'll see a prompt to select a folder — I suggest creating a "Claude" folder in your home folder (for example, `Users/Luca/Claude`).
 - **If you're on the free plan:** Start a regular chat. Then **(very important)** paste the following and send the message: 
   - Add this to your memory: Every time you create or edit a skill, you must use the present_file tool to show me the finished skill, and clearly tell me to click "Copy to your skills" to save it. Warn me that the skill will be lost if I don't click that button.
 
@@ -18,7 +20,7 @@ Paste this and send it:
 ---
 
 Create a skill called "reflect".
-When I type "reflect", you should spin a subagent to:
+When I type "reflect", you should:
 1. Review what we've done in this chat.
 2. Identify mistakes, friction, or unclear outputs.
 3. Propose a short list of concrete improvements.
@@ -40,22 +42,4 @@ When Claude finishes, it should show you the skill and prompt you to click **"Co
 **Verify the skill was saved:** Type `reflect`. Since you haven't done any work yet, Claude should explain there's nothing to reflect on but describe what it will do when there is. That confirms the skill is active and will be available in all future sessions.
 
 ### How to use it
-- Work with Claude normally.
-- **When something feels off** – you corrected Claude, re-explained something, or the output wasn't quite right – type:
-
-  `reflect`
-
-Claude will suggest improvements and ask whether to remember them.
-
-**Tip:** If you find yourself explaining the same preference or correction 2-3 times, type `reflect` — Claude will likely suggest creating a skill to remember it.
-
-#### Example
-After editing an email together, type `reflect`.
-Claude may suggest things like:
-- "You prefer concise openings."
-- "You care about timezone clarity."
-
-You choose what gets remembered.
-
-#### If something goes wrong
-- If `reflect` doesn't work, start a fresh chat and repeat step 3.
+At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
