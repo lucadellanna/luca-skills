@@ -39,6 +39,6 @@ Copy-paste this in your chat with Claude:
 ### How to use it
 At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
 
-<hr />
+---
 
 *This guide is provided as-is for informational purposes only. AI tools may produce inaccurate or unexpected outputs. Always review results before acting on them. See the project [LICENSE](https://github.com/lucadellanna/luca-skills/blob/main/LICENSE) for full terms.*
