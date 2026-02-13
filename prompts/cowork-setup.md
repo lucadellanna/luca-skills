@@ -32,7 +32,7 @@ Copy-paste this in your chat with Claude:
 >
 > Also: Proactively suggest typing "reflect" whenever you notice I've had to correct you, clarify something twice, or seem frustrated.
 
-**If you are using Claude in a chat, not in Cowork, also do this:** when Claude finishes, it should show you the newly-created skill file and prompt you to click on "Copy to your skills." Do that.
+**For free plan users:** When Claude shows the new skill file, click **"Copy to your skills"** to save it.
 
 **Verify the skill was saved:** Type `reflect`. Since you haven't done any work yet, Claude should explain there's nothing to reflect on but describe what it will do when there is. That confirms the skill is active and will be available in all future sessions.
 
