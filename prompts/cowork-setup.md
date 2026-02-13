@@ -6,7 +6,7 @@ Frustrated at having to copy/paste prompts all the time, or seeing Claude making
 - Open **Settings → Privacy** and deselect **"Help improve Claude"** so your conversations and preferences remain private.
 
 ## 2) Start a chat
-- Open Claude Desktop
+Open Claude Desktop, then:
 - **If you have a paid plan:** Click **"Cowork"** at the top, then start a new chat. You'll see a prompt to select a folder. I suggest creating a "Claude" folder in your home folder (for example, `Users/yourname/Claude`).
 - **If you're on the free plan:** Start a regular chat. Then **(very important)** paste the following and send the message: 
   >Add this to your memory: Every time you create or edit a skill, you must use the present_file tool to show me the finished skill, and clearly tell me to click "Copy to your skills" to save it. Warn me that the skill will be lost if I don't click that button.
@@ -14,7 +14,7 @@ Frustrated at having to copy/paste prompts all the time, or seeing Claude making
 ## 3) Create the "reflect" skill
 A **skill** is a saved instruction that Claude remembers across all your future chats. It's the basic building block to ensure that Claude gets better as you keep using it.
 
-Paste this and send it:
+Copy-paste this in your chat with Claude:
 
 > Create a skill called "reflect".
 > When I type "reflect", you should:
@@ -32,13 +32,17 @@ Paste this and send it:
 >
 > Also: Proactively suggest typing "reflect" whenever you notice I've had to correct you, clarify something twice, or seem frustrated.
 
-When Claude finishes, it should show you the skill and prompt you to click **"Copy to your skills."** Click it.
+**For free plan users:** When Claude shows the new skill file, click **"Copy to your skills"** to save it.
+
+**For paid plan (Cowork) users:** The skill is saved automatically.
 
 **Verify the skill was saved:** Type `reflect`. Since you haven't done any work yet, Claude should explain there's nothing to reflect on but describe what it will do when there is. That confirms the skill is active and will be available in all future sessions.
 
 ### How to use it
 At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
 
-<hr />
+To edit skills, simply describe the required change to Claude, and he will assist you.
+
+---
 
 *This guide is provided as-is for informational purposes only. AI tools may produce inaccurate or unexpected outputs. Always review results before acting on them. See the project [LICENSE](https://github.com/lucadellanna/luca-skills/blob/main/LICENSE) for full terms.*
