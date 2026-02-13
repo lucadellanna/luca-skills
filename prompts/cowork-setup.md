@@ -39,7 +39,9 @@ Copy-paste this in your chat with Claude:
 **Verify the skill was saved:** Type `reflect`. Since you haven't done any work yet, Claude should explain there's nothing to reflect on but describe what it will do when there is. That confirms the skill is active and will be available in all future sessions.
 
 ### How to use it
-At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve. To edit skills, simply describe the required change to Claude, and he will assist you.
+At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
+
+To edit skills, simply describe the required change to Claude, and he will assist you.
 
 ---
 
