@@ -34,12 +34,12 @@ Copy-paste this in your chat with Claude:
 
 **For free plan users:** When Claude shows the new skill file, click **"Copy to your skills"** to save it.
 
-**For paid plan (Cowork) users:** The skill is saved automatically as a file in your project folder.
+**For paid plan (Cowork) users:** The skill is saved automatically.
 
 **Verify the skill was saved:** Type `reflect`. Since you haven't done any work yet, Claude should explain there's nothing to reflect on but describe what it will do when there is. That confirms the skill is active and will be available in all future sessions.
 
 ### How to use it
-At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
+At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve. To edit skills, simply describe the required change to Claude, and he will assist you.
 
 ---
 
