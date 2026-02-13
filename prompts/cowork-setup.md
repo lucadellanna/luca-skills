@@ -3,7 +3,7 @@ Frustrated at having to copy/paste prompts all the time, or seeing Claude making
 Here's a quick guide to have a self-improving setup for Claude. Great for non-technical users.
 
 ## 1) Install & basic privacy
-- Install **Claude Desktop**: https://claude.com/download
+- Install **Claude Desktop**: [claude.com/download](https://claude.com/download)
 - Open **Settings → Privacy** and deselect **"Help improve Claude"** so your conversations and preferences remain private.
 
 ## 2) Start a chat
@@ -17,25 +17,21 @@ A **skill** is a saved instruction that Claude remembers across all your future 
 
 Paste this and send it:
 
----
-
-Create a skill called "reflect".
-When I type "reflect", you should:
-1. Review what we've done in this chat.
-2. Identify mistakes, friction, or unclear outputs.
-3. Propose a short list of concrete improvements.
-4. Ask me which of these you should remember for future chats.
-
-If any skills were used in this chat, also check each one for improvements:
-1. If the skill doesn't already have a self-check: add success criteria at the top and an instruction at the bottom to verify those criteria are met before presenting output (iterating up to 5 times if not).
-2. Check the skill for conciseness and opportunities to save tokens, without degrading clarity or functionality.
-3. Propose any other improvements to the skill, and ask me whether to apply them.
-
-If you notice I repeatedly ask you to do similar tasks, suggest creating a reusable skill and ask for confirmation before doing so.
-
-Also: Proactively suggest typing "reflect" whenever you notice I've had to correct you, clarify something twice, or seem frustrated.
-
----
+> Create a skill called "reflect".
+> When I type "reflect", you should:
+> 1. Review what we've done in this chat.
+> 2. Identify mistakes, friction, or unclear outputs.
+> 3. Propose a short list of concrete improvements.
+> 4. Ask me which of these you should remember for future chats.
+>
+> If any skills were used in this chat, also check each one for improvements:
+> 1. If the skill doesn't already have a self-check: add success criteria at the top and an instruction at the bottom to verify those criteria are met before presenting output (iterating up to 5 times if not).
+> 2. Check the skill for conciseness and opportunities to save tokens, without degrading clarity or functionality.
+> 3. Propose any other improvements to the skill, and ask me whether to apply them.
+>
+> If you notice I repeatedly ask you to do similar tasks, suggest creating a reusable skill and ask for confirmation before doing so.
+>
+> Also: Proactively suggest typing "reflect" whenever you notice I've had to correct you, clarify something twice, or seem frustrated.
 
 When Claude finishes, it should show you the skill and prompt you to click **"Copy to your skills"**. Click it.
 
@@ -44,6 +40,6 @@ When Claude finishes, it should show you the skill and prompt you to click **"Co
 ### How to use it
 At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
 
----
+<hr />
 
-*This guide is provided as-is for informational purposes only. AI tools may produce inaccurate or unexpected outputs. Always review results before acting on them. See the project [LICENSE](../LICENSE) for full terms.*
+*This guide is provided as-is for informational purposes only. AI tools may produce inaccurate or unexpected outputs. Always review results before acting on them. See the project [LICENSE](https://github.com/lucadellanna/luca-skills/blob/main/LICENSE) for full terms.*
