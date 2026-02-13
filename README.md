@@ -1,5 +1,7 @@
 # luca-skills
 
+> **Work in progress** — This project is under active development and is not ready for use. Things may break, change significantly, or disappear without notice.
+
 A curated collection of AI skills you can install, customize, and keep improving over time — all through plain conversation.
 
 Skills help Claude do specific tasks well: download financial reports, analyze documents, review writing, and more. You own your skills locally. You can customize them to fit how you work. And when improvements are available, you decide what to adopt — in your own words, at your own pace.

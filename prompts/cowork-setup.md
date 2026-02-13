@@ -8,7 +8,7 @@ Here's a quick guide to have a self-improving setup for Claude. Great for non-te
 
 ## 2) Start a chat
 - Open Claude Desktop
-- **If you have a paid plan:** Click **"Cowork"** at the top, then start a new chat. You'll see a prompt to select a folder — I suggest creating a "Claude" folder in your home folder (for example, `Users/Luca/Claude`).
+- **If you have a paid plan:** Click **"Cowork"** at the top, then start a new chat. You'll see a prompt to select a folder — I suggest creating a "Claude" folder in your home folder (for example, `Users/yourname/Claude`).
 - **If you're on the free plan:** Start a regular chat. Then **(very important)** paste the following and send the message: 
   - Add this to your memory: Every time you create or edit a skill, you must use the present_file tool to show me the finished skill, and clearly tell me to click "Copy to your skills" to save it. Warn me that the skill will be lost if I don't click that button.
 
@@ -43,3 +43,7 @@ When Claude finishes, it should show you the skill and prompt you to click **"Co
 
 ### How to use it
 At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
+
+---
+
+*This guide is provided as-is for informational purposes only. AI tools may produce inaccurate or unexpected outputs. Always review results before acting on them. See the project [LICENSE](../LICENSE) for full terms.*
