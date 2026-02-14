@@ -33,11 +33,13 @@ Copy-paste this in your chat with Claude:
 >
 > Also: Proactively suggest typing "reflect" whenever you notice I've had to correct you, clarify something twice, or seem frustrated.
 
-**For free plan users:** When Claude shows the new skill file, click **"Copy to your skills"** to save it.
+Then, depending on the interface you are using:
 
-**For paid plan (Cowork) users:** The skill is saved automatically.
+**- If you are using the Chat interface:** When Claude shows the new skill file, click **"Copy to your skills"** to save it.
 
-**Verify the skill was saved:** Type `reflect`. Since you haven't done any work yet, Claude should explain there's nothing to reflect on but describe what it will do when there is. That confirms the skill is active and will be available in all future sessions.
+**- If you are using the Cowork interface:** The skill is saved automatically.
+
+**Verify the skill was saved:** Ask Claude to "Show me the skills you have available." The newly created "reflect" skill should be there. If not, you may want to re-read the previous steps carefully to ensure you haven't missed anything. In particular, make sure that, if Claude asked you if you wanted to save the newly created skill, you answered affirmatively, and if he showed you a "Copy to your skills" button, you did click on it. In the remote event this is not sufficient, simply ask Claude to "help me save the reflect skill so that it's available in new sessions."
 
 ### How to use it
 At the end of each work session, or milestone, type reflect and send the message. Then let Claude self-improve.
