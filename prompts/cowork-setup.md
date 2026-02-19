@@ -10,6 +10,7 @@ Open Claude Desktop, then:
 - **If you have a paid plan:** Click **"Cowork"** at the top, then start a new chat. You'll see a prompt to select a folder. I suggest creating a "Claude" folder in your home folder (for example, `Users/yourname/Claude`).
 - **If you're on the free plan:** Start a regular chat. Then **(very important)** paste the following and send the message: 
   >Add this to your memory: Every time you create or edit a skill, you must use the present_file tool to show me the finished skill, and clearly tell me to click "Copy to your skills" to save it. Warn me that the skill will be lost if I don't click that button.
+
 *This guide works best with a paid plan and Cowork mode. The free plan's chat mode is still usable, though the experience is slightly less seamless.*
 
 ## 3) Create the "reflect" skill
